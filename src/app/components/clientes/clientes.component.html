@@ -11,11 +11,7 @@
 >
   <!-- Botones -->
   <div class="row justify-content-center">
-    <button
-      type="button"
-      class="btn btn-primary"
-      (click)="Pagina = 1; Buscar()"
-    >
+    <button type="button" class="btn btn-primary" (click)="Buscar()">
       <span class="fas fa-search"> </span> Consultar
     </button>
     &nbsp;
@@ -31,51 +27,26 @@
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th class="text-center">Nombre</th>
-        <th class="text-center">Precio</th>
-        <th class="text-center">Stock</th>
-        <th class="text-center">Fecha de Alta</th>
-        <th>Familia</th>
-        <th class="text-center">Activo</th>
-        <th class="text-center text-nowrap">Acciones</th>
+        <th class="text-center">id</th>
+        <th class="text-center">IdAutomovil</th>
+        <th class="text-center">Marca</th>
+        <th class="text-center">Modelo</th>
+        <th class="text-center">Anio</th>
+        <th class="text-center">FechaAlta</th>
+        <th class="text-center">Usado</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let dto of Lista">
-        <td>{{ dto.Nombre | uppercase }}</td>
-        <td class="text-right">{{ dto.Precio | currency: '$' }}</td>
-        <td class="text-right">{{ dto.Stock }}</td>
+        <td>{{ dto.id | uppercase }}</td>
+        <td>{{ dto.IdAutomovil | uppercase }}</td>
+        <td>{{ dto.Marca | uppercase }}</td>
+        <td>{{ dto.Modelo | uppercase }}</td>
+        <td>{{ dto.Anio | uppercase }}</td>
+
         <td>{{ dto.FechaAlta | date: 'dd/MM/yyyy' }}</td>
-        <td>{{ GetArticuloFamiliaNombre(dto.IdArticuloFamilia) }}</td>
-        <td>{{ dto.Activo ? 'SI' : 'NO' }}</td>
-        <td class="text-center text-nowrap">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-primary"
-            title="Ver"
-            (click)="Consultar(dto)"
-          >
-            <span class="fas fa-eye"></span>
-          </button>
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-primary"
-            title="Modificar"
-            (click)="Modificar(dto)"
-          >
-            <span class="fas fa-pencil-alt"></span>
-          </button>
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-{{
-              dto.Activo ? 'danger' : 'success'
-            }}"
-            title="{{ dto.Activo ? 'Desactivar' : 'Activar' }}"
-            (click)="ActivarDesactivar(dto)"
-          >
-            <span class="fas fa-{{ dto.Activo ? 'times' : 'check' }}"></span>
-          </button>
-        </td>
+        <td>{{ dto.Usado ? 'SI' : 'NO' }}</td>
+        <td class="text-center text-nowrap"></td>
       </tr>
     </tbody>
   </table>
