@@ -14,7 +14,7 @@ import { ModalDialogService } from '../../services/modal-dialog.service';
   styleUrls: ['./clientes.component.css'],
 })
 export class ClientesComponent implements OnInit {
-  Titulo = 'Clientes';
+  Titulo = 'Automoviles';
   TituloAccionABMC = {
     A: '(Agregar)',
     B: '(Eliminar)',

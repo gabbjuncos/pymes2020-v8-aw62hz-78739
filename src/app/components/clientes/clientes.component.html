@@ -27,7 +27,6 @@
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th class="text-center">id</th>
         <th class="text-center">IdAutomovil</th>
         <th class="text-center">Marca</th>
         <th class="text-center">Modelo</th>
@@ -38,12 +37,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let dto of Lista">
-        <td>{{ dto.id | uppercase }}</td>
         <td>{{ dto.IdAutomovil | uppercase }}</td>
         <td>{{ dto.Marca | uppercase }}</td>
         <td>{{ dto.Modelo | uppercase }}</td>
         <td>{{ dto.Anio | uppercase }}</td>
-
         <td>{{ dto.FechaAlta | date: 'dd/MM/yyyy' }}</td>
         <td>{{ dto.Usado ? 'SI' : 'NO' }}</td>
         <td class="text-center text-nowrap"></td>
